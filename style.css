@@ -63,15 +63,16 @@
 
 .divDelWrapper2{
     display: flex;
+    text-align: center;
     justify-content: center;
 }
 
-.video-1{
-    width: 30%;
-    margin-top: 8vh;
-    border: 1px solid black;
-    border-radius: 20px;
+.divDelWrapper2 video{
+    margin-top: 4%;
+    border-radius: 15px;
+    border: 1px solid gray;
 }
+
 
 /* TERCERA SECCION */
 

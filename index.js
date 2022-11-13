@@ -14,7 +14,7 @@
                   alert ("Su orden de " + platos + " de ramen de " + tipoDeRamen + " fue recibida con exito, sera preparada en breves y enviada a " + direccion)
                   break;
               case "arroz":
-                  let direccionn = prompt ("¿A que direccion enviamos el pedido?")
+                  direccion = prompt ("¿A que direccion enviamos el pedido?")
                   alert ("Su orden de " + platos + " de ramen de " + tipoDeRamen + " fue recibida con exito y sera preparada y enviada a " + direccionn)
                   break;
           }
