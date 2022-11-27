@@ -1,25 +1,61 @@
+const productos = [];
 
+class Prendas {
+    constructor() {
+        this.id = productos.length + 1;
+        this.name = prompt("Ingresa el nombre de tu producto");
+        this.precio = parseFloat(prompt("Ingresa un precio"));
+        this.quantity = parseInt(prompt("Ingrese la cantidad de productos"))
+        this.url = prompt("Ingrese la URL de la imagen del producto")
+    }
+};
+
+let opciones = prompt("ingrese 1 para agregar productos, 2 para mostrarlos, 3 para borrar un producto y 0 para salir");
+
+const agregarProductos = () => {
+    const nuevoProducto = new Prendas();
+    productos.push(nuevoProducto)
+}
+
+const mostrarProductos = () => {
+    alert("Productos mostrados en la consola")
+    console.log("Usted solicitó ver sus productos:")
+    productos.forEach((producto, index) => {
+        console.log((index + 1), producto)
+    })
+}
+
+const eliminarProductos = () => {
+    eliminado = (prompt("Inserte el ID del producto que quiera eliminar"))
+    if (isNaN(eliminado)){
+        alert("Por favor ingrese un numero")
+    }
+    productos.splice(eliminado, 1)
+}
  
- function delivery () {
-      let platos = parseInt(prompt ("¿Cuantos platos de ramen desea?"))
-      if (isNaN(platos)){
-          alert("Por favor elija un numero valido")
-          delivery()
-      } else{
-          alert("Usted ordenó " + platos + " platos de ramen");
-          let tipoDeRamen = (prompt ("¿Prefiere su ramen a base de fideos o de arroz?").toLowerCase())
-          switch(tipoDeRamen){
-              case "fideos":
-                  let direccion = prompt ("¿A que direccion enviamos el pedido?")
-                  alert ("Su orden de " + platos + " de ramen de " + tipoDeRamen + " fue recibida con exito, sera preparada en breves y enviada a " + direccion)
-                  break;
-              case "arroz":
-                  direccion = prompt ("¿A que direccion enviamos el pedido?")
-                  alert ("Su orden de " + platos + " de ramen de " + tipoDeRamen + " fue recibida con exito y sera preparada y enviada a " + direccionn)
-                  break;
-          }
-      }
+const menu = (opcion) => {
+    switch (opcion) {
+        case "1":
+            agregarProductos();
+            break;
 
-  }
+        case "2":
+            mostrarProductos();
+            break
 
-  delivery() 
+        case "3":
+            eliminarProductos();
+            break
+
+            
+        default:
+            alert("Por favor ingrese una opcion correcta");
+            break
+    }
+    opciones = prompt("ingrese 1 para agregar productos, 2 para mostrarlos, 3 para borrar un producto y 0 para salir");
+}
+
+
+while (opciones !== "0") {
+    menu(opciones)
+}
